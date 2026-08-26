@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual Crash preview poster</title><desc id="desc">A rising pink trajectory and neutral multiplier display.</desc>
+  <defs><radialGradient id="bg"><stop stop-color="#571228"/><stop offset="1" stop-color="#10080b"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="960" height="600" fill="url(#bg)"/><g stroke="#fff" opacity=".1"><path d="M130 90v390h720"/><path d="M130 400h720M130 320h720M130 240h720M260 90v390M390 90v390M520 90v390M650 90v390M780 90v390"/></g><path d="M130 470C310 468 480 430 610 335S785 180 840 105" fill="none" stroke="#ff5c9a" stroke-width="7" filter="url(#glow)"/><text x="500" y="285" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="800" font-size="88">2.14x</text>
+</svg>

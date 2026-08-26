@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090607">
+  <meta name="description" content="Discover fast, visual, strategic and classic games inside 3STAR Originals.">
+  <title>3STAR Originals | Play Something Different</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#main" aria-label="3STAR Originals home">
+      <span class="brand-mark" aria-hidden="true">3<span>★</span></span>
+      <span>ORIGINALS</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#featured">Featured</a><a href="#catalogue">All Games</a><a href="#rewards">Rewards</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="search-toggle" type="button" aria-label="Search games" title="Search games">
+        <span aria-hidden="true">⌕</span>
+      </button>
+      <button class="avatar-button" id="account-button" type="button" aria-label="Member profile">AK</button>
+      <button class="icon-button menu-button" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="drawer-head"><strong>Menu</strong><button class="icon-button" data-close-drawer aria-label="Close menu">×</button></div>
+    <nav><a href="#featured">Featured</a><a href="#catalogue">All Games</a><a href="#rewards">Rewards</a></nav>
+  </aside>
+  <div class="drawer-scrim" data-close-drawer hidden></div>
+
+  <main id="main">
+    <section class="intro" id="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Play Something <em>Different.</em></h1>
+        <p>Fast, visual, strategic and classic games—all inside 3STAR Originals.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" id="explore-games" href="#catalogue">Explore Games <span aria-hidden="true">↓</span></a>
+          <button class="button button-secondary" id="open-finder" type="button">Help Me Choose</button>
+        </div>
+      </div>
+
+      <section class="preview" id="game-preview" aria-labelledby="preview-title" aria-roledescription="carousel">
+        <div class="preview-stage">
+          <canvas id="preview-canvas" width="960" height="600" aria-label="Conceptual Plinko game animation"></canvas>
+          <div class="preview-shade"></div>
+          <div class="preview-topline">
+            <span class="live-label"><i></i> Concept preview</span>
+            <button class="glass-button" id="preview-toggle" type="button" aria-label="Pause preview">Ⅱ</button>
+          </div>
+          <div class="preview-copy">
+            <span id="preview-category">Casual &amp; Visual</span>
+            <h2 id="preview-title">Plinko</h2>
+            <p id="preview-description">Drop. Bounce. Discover where it lands.</p>
+            <div class="preview-actions">
+              <button class="button button-primary button-small" id="preview-play">Play Game</button>
+              <button class="text-button" id="preview-how">How It Works</button>
+            </div>
+          </div>
+        </div>
+        <div class="preview-controls">
+          <button class="icon-button" id="preview-prev" aria-label="Previous game">←</button>
+          <div class="preview-tabs" role="tablist" aria-label="Select a game preview"></div>
+          <button class="icon-button" id="preview-next" aria-label="Next game">→</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="nba-wrap container" id="next-action-region" hidden aria-label="Recommended next action"></section>
+    <section class="section member-section container" id="for-you" hidden aria-labelledby="for-you-title">
+      <div class="section-heading"><div><p class="kicker">Picked for your session</p><h2 id="for-you-title">For You</h2></div></div>
+      <div class="game-rail" id="member-games"></div>
+    </section>
+
+    <section class="section container" id="featured" aria-labelledby="featured-title">
+      <div class="section-heading">
+        <div><p class="kicker">Curated, never ranked</p><h2 id="featured-title">Featured Games</h2><p>A curated selection of Originals experiences to help you get started.</p></div>
+        <button class="text-button section-action" id="view-featured">View All Featured <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="game-rail featured-rail" id="featured-games"></div>
+    </section>
+
+    <section class="catalogue-section" id="catalogue" aria-labelledby="catalogue-title">
+      <div class="container">
+        <div class="section-heading catalogue-heading">
+          <div><p class="kicker">The full collection</p><h2 id="catalogue-title">All Originals</h2><p>Explore every active 3STAR Originals game.</p></div>
+          <span class="result-count" id="result-count" aria-live="polite"></span>
+        </div>
+        <div class="catalogue-tools">
+          <label class="search-field"><span class="sr-only">Search by game name</span><span aria-hidden="true">⌕</span><input id="catalogue-search" type="search" placeholder="Search games" autocomplete="off"></label>
+          <div class="filter-row" id="category-filters" aria-label="Filter by category"></div>
+          <label class="select-field"><span class="sr-only">Filter by pace</span><select id="pace-filter"><option value="all">All paces</option></select></label>
+          <button class="text-button" id="clear-filters" type="button">Clear filters</button>
+        </div>
+        <div class="game-grid" id="catalogue-games"></div>
+        <div class="empty-state" id="catalogue-empty" hidden><strong>No games found</strong><p>Try a different search or clear your filters.</p><button class="button button-secondary" data-clear-filters>Clear Filters</button></div>
+        <button class="button button-secondary catalogue-toggle" id="catalogue-toggle" type="button">View All Originals</button>
+      </div>
+    </section>
+
+    <section class="rewards-section" id="rewards" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="rewards-title" tabindex="-1">
+      <div class="reward-drawer-head"><span>Rewards</span><button class="icon-button" id="close-rewards" type="button" aria-label="Close reward progress">×</button></div>
+      <div class="reward-drawer-body reward-layout">
+        <div class="reward-intro"><p class="kicker">One journey. Every eligible game.</p><h2 id="rewards-title">Your Reward Progress</h2><p>Eligible turnover from every active Originals game moves you along one unified milestone journey.</p><ul class="reward-rules"><li>Featured Games do not contribute faster.</li><li>Finder activity, tutorials and previews do not contribute.</li><li>Progress resets weekly; account eligibility and approved terms apply.</li></ul></div>
+        <article class="reward-card" id="reward-card">
+          <div class="reward-card-head"><span>NEXT REWARD</span><span class="prototype-label">Illustrative values</span></div>
+          <strong class="reward-amount" id="reward-amount">RM5</strong>
+          <p id="reward-requirement">Complete RM100 qualifying turnover</p>
+          <div class="progress-copy"><strong id="reward-progress-copy">RM62 / RM100</strong><span id="reward-percent">62%</span></div>
+          <div class="progress-track" role="progressbar" aria-label="Reward progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62"><i id="reward-progress-bar"></i></div>
+          <div class="reward-stats"><div><span>Weekly reset</span><strong id="reward-reset">2d 13h</strong></div></div>
+          <p class="next-milestone" id="next-milestone">Next milestone: RM15 at RM250</p>
+          <div class="reward-milestones"><strong>All Milestones</strong><div class="milestone-list" id="reward-milestones"></div></div>
+          <div class="reward-actions"><button class="button button-primary" id="reward-primary">Continue Playing</button></div>
+          <p class="prototype-note">Configurable prototype values, not final commercial terms.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="reward-drawer-backdrop" id="reward-drawer-backdrop" hidden></div>
+  <button class="floating-reward" id="floating-reward" type="button" hidden aria-label="View reward progress" aria-controls="rewards" aria-expanded="false"><span class="reward-float-icon" aria-hidden="true">🎁</span><span class="reward-float-copy"><span>Next reward</span><strong id="floating-reward-copy">RM62 / RM100</strong></span></button>
+
+  <footer class="site-footer">
+    <div class="container footer-grid"><div><a class="brand" href="#main"><span class="brand-mark">3<span>★</span></span><span>ORIGINALS</span></a><p>Play responsibly. Eligibility, minimum age and territory restrictions apply.</p></div><nav aria-label="Footer navigation"><a href="#featured">Featured</a><a href="#catalogue">All Games</a><a href="#rewards">Rewards</a><a href="#" data-prototype-link>Promotion Terms</a></nav></div>
+    <div class="container footer-bottom"><span>Prototype reward values are illustrative.</span><span>© 2026 3STAR Originals</span></div>
+  </footer>
+
+  <div class="modal" id="app-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <div class="modal-head"><h2 id="modal-title">Details</h2><button class="icon-button" data-close-modal aria-label="Close dialog">×</button></div>
+      <div class="modal-body" id="modal-body"></div>
+    </section>
+  </div>
+
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <section class="demo-panel" id="demo-panel" hidden aria-label="Prototype scenario controls">
+    <label>Demo state<select id="demo-state"></select></label><button class="icon-button" id="demo-minimise" aria-label="Minimise demo controls">−</button>
+  </section>
+</body>
+</html>
