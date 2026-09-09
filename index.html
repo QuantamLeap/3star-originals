@@ -106,18 +106,16 @@
     </section>
 
     <section class="rewards-section" id="rewards" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="rewards-title" tabindex="-1">
-      <div class="reward-drawer-head"><span>Rewards</span><button class="icon-button" id="close-rewards" type="button" aria-label="Close reward progress">×</button></div>
+      <div class="reward-drawer-head"><span id="rewards-title">Reward Progress</span><button class="icon-button" id="close-rewards" type="button" aria-label="Close reward progress">×</button></div>
       <div class="reward-drawer-body reward-layout">
-        <div class="reward-intro"><p class="kicker">One journey. Every eligible game.</p><h2 id="rewards-title">Your Reward Progress</h2><p>Eligible turnover from every active Originals game moves you along one unified milestone journey.</p><ul class="reward-rules"><li>Featured Games do not contribute faster.</li><li>Finder activity, tutorials and previews do not contribute.</li><li>Progress resets weekly; account eligibility and approved terms apply.</li></ul></div>
         <article class="reward-card" id="reward-card">
-          <div class="reward-card-head"><span>NEXT REWARD</span><span class="prototype-label">Illustrative values</span></div>
+          <div class="reward-card-head"><span>NEXT REWARD</span></div>
           <strong class="reward-amount" id="reward-amount">RM5</strong>
-          <p id="reward-requirement">Complete RM100 qualifying turnover</p>
+          <p id="reward-requirement">RM100 qualifying turnover</p>
           <div class="progress-copy"><strong id="reward-progress-copy">RM62 / RM100</strong><span id="reward-percent">62%</span></div>
           <div class="progress-track" role="progressbar" aria-label="Reward progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62"><i id="reward-progress-bar"></i></div>
           <div class="reward-stats"><div><span>Weekly reset</span><strong id="reward-reset">2d 13h</strong></div></div>
-          <p class="next-milestone" id="next-milestone">Next milestone: RM15 at RM250</p>
-          <div class="reward-milestones"><strong>All Milestones</strong><div class="milestone-list" id="reward-milestones"></div></div>
+          <div class="reward-milestones"><strong>Milestones</strong><div class="milestone-list" id="reward-milestones"></div></div>
           <div class="reward-actions"><button class="button button-primary" id="reward-primary">Continue Playing</button></div>
           <p class="prototype-note">Configurable prototype values, not final commercial terms.</p>
         </article>

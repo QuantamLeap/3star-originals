@@ -130,16 +130,12 @@ p { color: var(--muted); line-height: 1.65; }
 .rewards-section.open { transform: none; visibility: visible; transition-delay: 0s; }
 .reward-drawer-head { position: sticky; z-index: 5; top: 0; min-height: 68px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: rgba(22,9,14,.94); backdrop-filter: blur(16px); }
 .reward-drawer-head > span { color: var(--gold); font-size: .72rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-.reward-drawer-body { width: min(100%, var(--max-width)); margin-inline: auto; padding-top: 34px; }
-.reward-layout { display: grid; grid-template-columns: 1fr minmax(420px, .85fr); align-items: center; gap: clamp(50px, 8vw, 120px); }
+.reward-drawer-body { width: min(100%, 720px); margin-inline: auto; padding-top: 24px; }
+.reward-layout { display: block; }
 .reward-drawer-backdrop { position: fixed; z-index: 350; inset: 0; background: rgba(4,2,3,.72); backdrop-filter: blur(5px); }
-.reward-intro > p:not(.kicker) { max-width: 560px; }
-.reward-rules { margin: 24px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .82rem; line-height: 1.7; }
-.reward-rules li::before { content: "✓"; margin-right: 10px; color: var(--green); font-weight: 900; }
 .reward-card { position: relative; overflow: hidden; padding: clamp(24px, 4vw, 40px); border: 1px solid rgba(255,212,59,.24); border-radius: var(--radius); background: linear-gradient(145deg, #35101d, #150c10 68%); box-shadow: 0 30px 80px rgba(0,0,0,.4); }
 .reward-card::after { content: "★"; position: absolute; right: -12px; top: -40px; color: rgba(255,212,59,.06); font: 800 12rem "Barlow Condensed", sans-serif; }
 .reward-card-head { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 15px; color: var(--gold); font-size: .68rem; font-weight: 900; letter-spacing: .12em; }
-.prototype-label { color: var(--muted); letter-spacing: 0; text-transform: none; }
 .reward-amount { position: relative; z-index: 1; display: block; margin: 16px 0 4px; font: 800 clamp(4.5rem, 8vw, 7.2rem)/.85 "Barlow Condensed", sans-serif; }
 .reward-card > p { position: relative; z-index: 1; }
 .progress-copy { display: flex; justify-content: space-between; margin: 26px 0 9px; font-size: .82rem; }
@@ -150,8 +146,7 @@ p { color: var(--muted); line-height: 1.65; }
 .reward-stats div { padding: 15px; border: 1px solid var(--line); background: rgba(255,255,255,.03); }
 .reward-stats span, .reward-stats strong { display: block; }
 .reward-stats span { margin-bottom: 4px; color: var(--muted); font-size: .68rem; }
-.next-milestone { padding-bottom: 18px; border-bottom: 1px solid var(--line); font-size: .8rem; }
-.reward-milestones { position: relative; z-index: 1; margin: 22px 0; }
+.reward-milestones { position: relative; z-index: 1; margin: 6px 0 22px; padding-top: 20px; border-top: 1px solid var(--line); }
 .reward-milestones > strong { display: block; margin-bottom: 10px; color: var(--gold); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
 .prototype-note { margin: 18px 0 0; font-size: .65rem; }
 .floating-reward { position: fixed; z-index: 40; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); min-height: 58px; display: flex; align-items: center; gap: 10px; padding: 7px 13px 7px 7px; border: 1px solid rgba(255,212,59,.35); border-radius: 99px; background: #211017; box-shadow: 0 15px 40px rgba(0,0,0,.5); text-align: left; cursor: pointer; }

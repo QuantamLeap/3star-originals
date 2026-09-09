@@ -51,26 +51,20 @@ export function createRewards({ openModal, closeModal, openGame, track, toast })
     return rewardConfig.milestones.find((milestone) => milestone.turnover > state.progress) || rewardConfig.milestones.at(-1);
   }
 
-  function nextMilestone(milestone) {
-    return rewardConfig.milestones.find((item) => item.turnover > milestone.turnover);
-  }
-
   function render() {
     const milestone = rewardConfig.milestones.find((item) => state.progress >= item.turnover && !claimedMilestones.has(item.turnover)) || currentMilestone();
-    const next = nextMilestone(milestone);
     const displayProgress = Math.min(state.progress, milestone.turnover);
     const percent = Math.min(100, Math.round((displayProgress / milestone.turnover) * 100));
     const claimable = rewardConfig.milestones.some((item) => state.progress >= item.turnover && !claimedMilestones.has(item.turnover));
 
     document.querySelector("#reward-amount").textContent = `RM${milestone.reward}`;
-    document.querySelector("#reward-requirement").textContent = `Complete RM${milestone.turnover} qualifying turnover`;
+    document.querySelector("#reward-requirement").textContent = `RM${milestone.turnover} qualifying turnover`;
     document.querySelector("#reward-progress-copy").textContent = `RM${displayProgress} / RM${milestone.turnover}`;
     document.querySelector("#reward-percent").textContent = `${percent}%`;
     document.querySelector("#reward-progress-bar").style.width = `${percent}%`;
     const progressBar = document.querySelector(".progress-track");
     progressBar.setAttribute("aria-valuenow", String(percent));
     document.querySelector("#reward-reset").textContent = rewardConfig.resetLabel;
-    document.querySelector("#next-milestone").textContent = next ? `Next milestone: RM${next.reward} at RM${next.turnover}` : "Highest illustrative milestone reached";
     document.querySelector("#reward-milestones").innerHTML = rewardConfig.milestones.map((item) => {
       const itemProgress = Math.min(state.progress, item.turnover);
       const itemPercent = Math.min(100, Math.round((itemProgress / item.turnover) * 100));
